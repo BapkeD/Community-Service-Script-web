@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Service Script - BapkeD Shop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .language-toggle {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+        .language-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .language-btn:hover {
+            background-color: #2980b9;
+        }
+        .feature {
+            background-color: white;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .feature h3 {
+            margin-top: 0;
+            color: #3498db;
+        }
+        code {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 2px 5px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button class="language-btn" onclick="toggleLanguage('nl')">Nederlands</button>
+        <button class="language-btn" onclick="toggleLanguage('en')">English</button>
+    </div>
+
+    <h1>Community Service Script</h1>
+
+    <div id="nl-content">
+        <h2>Beschrijving</h2>
+        <p>Dit script is een community service systeem voor FiveM servers. Staffleden kunnen spelers taken toewijzen als een vorm van straf. Spelers moeten deze taken voltooien binnen een aangewezen gebied op de map.</p>
+
+        <h3>Belangrijkste kenmerken:</h3>
+        <div class="feature">
+            <h3>📊 Interactieve UI</h3>
+            <p>Een strak, responsief interface dat naadloos integreert in je server. Spelers kunnen eenvoudig hun gemeenschapsdiensttaken bijhouden, redenen voor hun toewijzing bekijken en zien wie de taken heeft toegewezen.</p>
+        </div>
+        <div class="feature">
+            <h3>🔄 Dynamisch Taakbeheer</h3>
+            <p>Real-time updates over toegewezen en voltooide taken. Spelers ontvangen duidelijke meldingen en updates over hun voortgang in de gemeenschapsdienst.</p>
+        </div>
+        <div class="feature">
+            <h3>🔧 Aanpasbare Instellingen</h3>
+            <p>Gemakkelijk aan te passen om aan de unieke behoeften van je server te voldoen. Pas de UI, taakdetails en strafinstellingen aan om bij je community te passen.</p>
+        </div>
+        <div class="feature">
+            <h3>🚀 Prestatie-geoptimaliseerd</h3>
+            <p>Lichtgewicht en geoptimaliseerd om een soepele prestatie te garanderen zonder de stabiliteit van de server te beïnvloeden.</p>
+        </div>
+        <div class="feature">
+            <h3>💾 Database Integratie</h3>
+            <p>Taakvoortgang wordt opgeslagen in een database voor consistentie en betrouwbaarheid.</p>
+        </div>
+
+        <h2>Eigendomsverklaring</h2>
+        <p>Dit script is eigendom van BapkeD shop. Het is strikt verboden om dit script door te verkopen, te herverdelen of te gebruiken zonder expliciete toestemming van de eigenaar. Alle rechten voorbehouden.</p>
+    </div>
+
+    <div id="en-content" class="hidden">
+        <h2>Description</h2>
+        <p>This script is a community service system for FiveM servers. Staff members can assign players tasks as a form of punishment. Players must complete these tasks within a designated area on the map.</p>
+
+        <h3>Key features:</h3>
+        <div class="feature">
+            <h3>📊 Interactive UI</h3>
+            <p>A sleek, responsive interface that seamlessly integrates into your server. Players can easily track their community service tasks, view reasons for their assignment, and see who assigned the tasks.</p>
+        </div>
+        <div class="feature">
+            <h3>🔄 Dynamic Task Management</h3>
+            <p>Real-time updates on assigned and completed tasks. Players receive clear notifications and updates on their community service progress.</p>
+        </div>
+        <div class="feature">
+            <h3>🔧 Customizable Settings</h3>
+            <p>Easily customizable to meet the unique needs of your server. Adjust the UI, task details, and penalty settings to fit your community.</p>
+        </div>
+        <div class="feature">
+            <h3>🚀 Performance Optimized</h3>
+            <p>Lightweight and optimized to ensure smooth performance without impacting server stability.</p>
+        </div>
+        <div class="feature">
+            <h3>💾 Database Integration</h3>
+            <p>Task progress is saved in a database for consistency and reliability.</p>
+        </div>
+
+        <h2>Ownership Statement</h2>
+        <p>This script is the property of BapkeD shop. It is strictly prohibited to resell, redistribute, or use this script without explicit permission from the owner. All rights reserved.</p>
+
+        <h2>Installation</h2>
+        <ol>
+            <li>Place the script files in your server's resource folder</li>
+            <li>Add the following to your server.cfg:
+                <pre><code>ensure community_service</code></pre>
+            </li>
+            <li>Set up the database using the provided SQL file</li>
+            <li>Configure staff identifiers in the server.lua file</li>
+        </ol>
+
+        <h2>Usage</h2>
+        <p>Staff members can use the following command to assign tasks:</p>
+        <pre><code>/assignservice [playerId] [numberOfTasks] [reason]</code></pre>
+        <p>Players will be notified and teleported to the work area to complete their assigned tasks.</p>
+
+        <h2>Support</h2>
+        <p>For support or inquiries, please open a ticket in our <a href="https://discord.gg/DNBHp2VGnC">Discord server</a>.</p>
+    </div>
+
+    <script>
+        function toggleLanguage(lang) {
+            const nlContent = document.getElementById('nl-content');
+            const enContent = document.getElementById('en-content');
+            if (lang === 'nl') {
+                nlContent.classList.remove('hidden');
+                enContent.classList.add('hidden');
+            } else {
+                nlContent.classList.add('hidden');
+                enContent.classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
